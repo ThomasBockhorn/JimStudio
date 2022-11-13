@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
 use Inertia\Inertia;
 
 /*
@@ -15,7 +16,8 @@ use Inertia\Inertia;
 |
 */
 
-
+//landing page
+Route::view('/welcome', 'welcome');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

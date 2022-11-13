@@ -78,6 +78,10 @@
             #landing img{
                 border-radius: 25px;
             }
+            h1,
+            p{
+                text-shadow: 2px 2px 2px white;
+            }
 
             @media screen and (max-width: 1020px){
                 #landing{
@@ -125,7 +129,7 @@
         <div class="title">
             <h1>Jim Felder, artist.</h1>
             <p>Come look at my art gallery.</p>
-            <a href = "/"><button>Enter</button></a>
+            <a href = "/"><button>Come on in!</button></a>
         </div>
         <img id = "self-image" src = "{{ asset('/images/FelderPaintingPortrait.jpg') }}"
              alt = "Jim Painting" class="self-center absolute w-1/2 h-1/2">

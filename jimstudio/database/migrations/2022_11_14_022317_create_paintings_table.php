@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('frame_status');
             $table->string('status');
             $table->text('notes');
+            $table->string('category');
             $table->timestamps();
         });
     }

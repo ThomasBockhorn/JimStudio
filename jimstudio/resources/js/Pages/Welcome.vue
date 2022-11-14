@@ -1,6 +1,6 @@
 <template>
     <main-layout>
-        test
+
 
     </main-layout>
 </template>

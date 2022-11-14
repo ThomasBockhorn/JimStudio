@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <div class="bg-gray-100">
+    <div class="w-full">
+        <div class="bg-gray-100 w-full">
             <div class="flex justify-center z-10">
                 <img src="/images/FelderStudioLogo.png" alt="Jim Logo">
             </div>
-            <nav class="flex justify-center">
+            <nav class="flex justify-center ml-6 mr-6">
                 <a class="p-3 hover:bg-gray-700 hover:text-white" href = "/welcome">Home</a>
                 <Link class="p-3 hover:bg-gray-700 hover:text-white" :href="'/'" as="button">Gallery</Link>
                 <button class="p-3 hover:bg-gray-700 hover:text-white" @click="dropDown">Category</button>

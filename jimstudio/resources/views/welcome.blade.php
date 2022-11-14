@@ -128,7 +128,7 @@
     <section id="landing">
         <div class="title">
             <h1>Jim Felder, artist.</h1>
-            <p>Come look at my art gallery.</p>
+            <p>See my art gallery.</p>
             <a href = "/"><button>Come on in!</button></a>
         </div>
         <img id = "self-image" src = "{{ asset('/images/FelderPaintingPortrait.jpg') }}"

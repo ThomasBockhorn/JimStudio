@@ -1,16 +1,21 @@
 <template>
     <main-layout>
-        test
+        empty gallery
 
     </main-layout>
 </template>
+
 <script>
 import mainLayout from "../Layouts/MainLayout.vue";
 
-export default{
+export default {
+	name: "Gallery",
     components:{
-        "main-layout": mainLayout
+        'main-layout': mainLayout
     }
 }
 </script>
-<style scoped></style>
+
+<style scoped>
+
+</style>

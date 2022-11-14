@@ -12,7 +12,7 @@
         </div>
 
         <div class="flex justify-center mt-2">
-            <ul v-if="active" class="block flex flex-col text-center w-60 bg-gray-100">
+            <ul v-if="active" class="block flex flex-col text-center w-60 bg-gray-100 z-50 absolute">
                 <li class="hover:bg-gray-700 hover:text-white p-2" @click="categoryPick">test 1</li>
                 <li class="hover:bg-gray-700 hover:text-white p-2" @click="categoryPick">test 2</li>
             </ul>
@@ -46,5 +46,10 @@ export default {
 </script>
 
 <style scoped>
-
+    a,
+    button,
+    Link,
+    li{
+        font-family: 'Montserrat', sans-serif
+    }
 </style>

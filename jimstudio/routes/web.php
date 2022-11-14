@@ -27,6 +27,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function() {
+    return Inertia::render('About');
+});
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

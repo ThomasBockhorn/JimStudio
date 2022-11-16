@@ -1,6 +1,6 @@
 <template>
     <main-layout>
-        <div>
+        <div class="m-5">
             <h4 class = "mb-5 text-2xl font-bold">Purchasing work from Jim Felder:</h4>
             <p class = "text-xl">
                 The paintings on this site are classified as Available (work that is for sale) in the

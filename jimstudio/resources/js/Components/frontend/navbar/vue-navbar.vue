@@ -6,10 +6,11 @@
             </div>
             <nav class="flex justify-center ml-6 mr-6">
                 <a class="p-3 hover:bg-gray-700 hover:text-white" href = "/welcome">Home</a>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" :href="'/'" as="button">Gallery</Link>
+                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/" as="button">Gallery</Link>
                 <button class="p-3 hover:bg-gray-700 hover:text-white" @click="dropDown">Category</button>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" :href="'/about'" as="button">About</Link>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" :href="'/dashboard'" as="button">Dashboard</Link>
+                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/about" as="button">About</Link>
+                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/dashboard" as="button">Dashboard</Link>
+                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/contact">Contact</Link>
             </nav>
         </div>
 

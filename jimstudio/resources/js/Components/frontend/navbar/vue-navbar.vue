@@ -9,8 +9,8 @@
                 <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/" as="button">Gallery</Link>
                 <button v-if="currentURL" class="p-3 hover:bg-gray-700 hover:text-white" @click="dropDown">Category</button>
                 <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/about" as="button">About</Link>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/dashboard" as="button">Dashboard</Link>
                 <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/contact">Contact</Link>
+                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/dashboard" as="button">Dashboard</Link>
             </nav>
         </div>
 
@@ -20,7 +20,6 @@
                 <li class="hover:bg-gray-700 hover:text-white p-2" @click="categoryPick">test 2</li>
             </ul>
         </div>
-
     </div>
 </template>
 

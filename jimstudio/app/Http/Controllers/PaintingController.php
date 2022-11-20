@@ -16,7 +16,9 @@ class PaintingController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('Paintings/index');
+        $paintings = Painting::all();
+
+        return Inertia::render('Paintings/index', compact('paintings'));
     }
 
     /**
@@ -32,12 +34,31 @@ class PaintingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
-        //
+        $fileName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('storage'), $fileName);
+
+        Painting::create([
+            'title' => $request->title,
+            'size' => $request->size,
+            'medium' => $request->medium,
+            'location' => $request->location,
+            'frame_status' => $request->frame_status,
+            'status' => $request->status,
+            'notes' => $request->notes,
+            'category' => $request->category,
+            'image' => $fileName
+        ]);
+
+        $paintings = Painting::all();
+
+        return Inertia::render('Paintings/index', compact('paintings'));
+
     }
 
     /**
@@ -65,7 +86,7 @@ class PaintingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\Models\Painting  $painting
      * @return \Illuminate\Http\Response
      */

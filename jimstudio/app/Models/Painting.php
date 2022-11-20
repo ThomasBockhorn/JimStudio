@@ -17,7 +17,8 @@ class Painting extends Model
         'frame_status',
         'status',
         'notes',
-        'category'
+        'category',
+        'image'
     ];
 
 }

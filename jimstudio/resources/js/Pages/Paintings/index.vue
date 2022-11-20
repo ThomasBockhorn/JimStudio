@@ -3,102 +3,19 @@
         <h2 class = "text-center text-4xl mb-10 tracking-wider">Gallery</h2>
         <div class = "flex justify-center">
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
-                <figure>
+                <figure v-for="painting in paintings" :key="painting.id">
                     <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
+                        :src = "'storage/' + painting.image"
+                        :alt = "painting.title">
                     <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img
-                        src = "#"
-                        alt = "Blackwell Swamp Blue Hole">
-                    <figcaption>
-                        <p>Title: <em>Blackwell Swamp Blue Hole</em></p>
-                        <p>Size: 10 x 14</p>
-                        <p>Medium: Oil on panel</p>
-                        <p>Location: Madison County, Alabama</p>
-                        <p>Frame: framed</p>
-                        <p>Status: Available.</p>
-                        <p>Notes: Thanksgiving Day 2020</p>
+                        <p>Title: <em>{{ painting.title }}</em></p>
+                        <p>Size: {{ painting.size }}</p>
+                        <p>Medium: {{ painting.medium }}</p>
+                        <p>Location: {{ painting.location }}</p>
+                        <p>Frame: {{ painting.frame_status }}</p>
+                        <p>Status: {{ painting.status }}.</p>
+                        <p>Notes: {{ painting.notes }}</p>
+                        <p>Category: {{ painting.category }}</p>
                     </figcaption>
                 </figure>
             </div>
@@ -114,7 +31,8 @@ export default {
 	name: "index",
     components:{
         "backend-layout": backendLayout,
-    }
+    },
+    props:['paintings']
 }
 </script>
 

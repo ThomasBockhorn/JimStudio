@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('status');
             $table->text('notes');
             $table->string('category');
+            $table->string('image');
             $table->timestamps();
         });
     }

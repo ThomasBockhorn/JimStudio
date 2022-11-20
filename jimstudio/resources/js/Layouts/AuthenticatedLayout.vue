@@ -6,6 +6,7 @@
 import backendNav from "../Components/backend/navbar/vue-backend-nav.vue";
 
 export default{
+    name: "AuthenticatedLayout",
     components:{
         "backend-nav": backendNav,
     }

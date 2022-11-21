@@ -38,7 +38,8 @@ Route::get('/contact', function(){
 
 /*-------------------------------------Backend pages----------------------------------*/
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $paintings = Painting::all();
+    return Inertia::render('Dashboard', compact('paintings'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('/paintings', PaintingController::class)

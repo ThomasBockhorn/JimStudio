@@ -5,7 +5,7 @@
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
                 <figure v-for="painting in paintings" :key="painting.id">
                     <img
-                        :src = "'storage/' + painting.image"
+                        :src = "'/storage/' + painting.image"
                         :alt = "painting.title">
                     <figcaption>
                         <p>Title: <em>{{ painting.title }}</em></p>

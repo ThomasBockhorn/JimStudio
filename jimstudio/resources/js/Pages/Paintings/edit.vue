@@ -130,10 +130,7 @@ export default {
         previewImage(e) {
             const imageURL = e.target.files[0];
             this.url = URL.createObjectURL(imageURL);
-        },
-        showEditPage() {
-            this.$inertia.get(route('Paintings.edit', this.painting.id));
-        },
+        }
     },
     setup(props) {
         const form = reactive({

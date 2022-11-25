@@ -98,7 +98,7 @@
                         <img :src = "'/storage/' + url" :alt = "url">
                     </div>
                 </div>
-                <Link href = "#" @click = "showEditPage(form.id)" class = "inline-block m-5">Edit</Link>
+                <Link :href = "'/paintings/' + painting.id + '/edit' " class = "inline-block m-5">Edit</Link>
                 <Link href = "/paintings/" class = "inline-block m-5">Gallery</Link>
                 <Link href = "/dashboard" class = "inline-block m-5">Dashboard</Link>
             </form>
@@ -131,9 +131,6 @@ export default {
         previewImage(e) {
             const imageURL = e.target.files[0];
             this.url = URL.createObjectURL(imageURL);
-        },
-        showEditPage(id) {
-            this.$inertia.get(route('Paintings.edit', id));
         },
     },
     setup(props) {

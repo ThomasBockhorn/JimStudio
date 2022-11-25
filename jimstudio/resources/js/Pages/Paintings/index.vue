@@ -29,11 +29,16 @@
 import backendLayout from "@/Layouts/AuthenticatedLayout.vue";
 
 export default {
-	name: "index",
-    components:{
+    name: "index",
+    components: {
         "backend-layout": backendLayout,
     },
-    props:['paintings']
+    props: ['paintings'],
+    methods: {
+        showIndividualProfile(id) {
+            this.$inertia.get(route('paintings.show', id));
+        }
+    }
 }
 </script>
 

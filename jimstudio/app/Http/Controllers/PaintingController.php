@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Painting;
-
 use App\Services\PaintingService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -51,30 +50,30 @@ class PaintingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Painting  $painting
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return Response
      */
-    public function show(Painting $painting)
+    public function show($id): Response
     {
-        //
+        return Inertia::render('Paintings/show', ['painting' => Painting::findOrFail($id)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Painting  $painting
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return Response
      */
-    public function edit(Painting $painting)
+    public function edit($id): Response
     {
-        //
+        return Inertia::render('Paintings/edit', ['painting' => Painting::findOrFail($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  \App\Models\Painting  $painting
+     * @param Painting $painting
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Painting $painting)
@@ -85,7 +84,7 @@ class PaintingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Painting  $painting
+     * @param Painting $painting
      * @return \Illuminate\Http\Response
      */
     public function destroy(Painting $painting)

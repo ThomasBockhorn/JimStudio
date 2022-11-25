@@ -6,7 +6,8 @@
                 <figure v-for="painting in paintings" :key="painting.id">
                     <img
                         :src = "'/storage/' + painting.image"
-                        :alt = "painting.title">
+                        :alt = "painting.title"
+                        @click = "showIndividualProfile(painting.id)">
                     <figcaption>
                         <p>Title: <em>{{ painting.title }}</em></p>
                         <p>Size: {{ painting.size }}</p>

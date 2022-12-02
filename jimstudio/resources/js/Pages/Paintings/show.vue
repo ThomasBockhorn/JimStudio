@@ -148,17 +148,7 @@ export default {
         });
 
         function submit() {
-            Inertia.post(route('painting.delete', form.id));
-            form.title = null;
-            form.category = null;
-            form.size = null;
-            form.medium = null;
-            form.location = null;
-            form.frame_status = null;
-            form.status = null;
-            form.image = null;
-            form.notes = null;
-            form.id = null;
+            Inertia.delete(route('paintings.destroy', form.id));
         }
 
         return {

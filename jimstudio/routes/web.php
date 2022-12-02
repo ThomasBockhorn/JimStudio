@@ -43,6 +43,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('/paintings', PaintingController::class)
-    ->middleware('auth');
+    ->middleware('auth')->except(['edit', 'update']);
 
 require __DIR__.'/auth.php';

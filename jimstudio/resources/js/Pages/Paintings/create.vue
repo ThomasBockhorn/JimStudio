@@ -92,17 +92,17 @@
 
 <script>
 import backendLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { reactive } from "vue";
-import { Inertia } from "@inertiajs/inertia";
-import { Link }  from '@inertiajs/inertia-vue3';
+import {reactive} from "vue";
+import {Inertia} from "@inertiajs/inertia";
+import {Link} from '@inertiajs/inertia-vue3';
 
 export default {
-	name: "create",
-    components:{
+    name: "create",
+    components: {
         "backend-layout": backendLayout,
         Link
     },
-    setup(){
+    setup() {
         const form = reactive({
             title: null,
             size: null,
@@ -116,7 +116,7 @@ export default {
         });
 
         function submit(){
-            Inertia.post('/paintings', form);
+            Inertia.post(route('paintings.store'), form);
         }
 
         return { form, submit }

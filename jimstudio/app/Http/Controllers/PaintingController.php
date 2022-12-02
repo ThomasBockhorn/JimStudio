@@ -10,6 +10,20 @@ use Inertia\Response;
 
 class PaintingController extends Controller
 {
+
+
+    /**
+     * Return to the main gallery.
+     *
+     * @return Response
+     */
+    private function returningToGallery(): Response
+    {
+        $paintings = Painting::all();
+
+        return Inertia::render('Paintings/index', compact('paintings'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,9 +56,7 @@ class PaintingController extends Controller
     {
         PaintingService::createPaintingService($request);
 
-        $paintings = Painting::all();
-
-        return Inertia::render('Paintings/index', compact('paintings'));
+        return self::returningToGallery();
     }
 
     /**
@@ -59,36 +71,15 @@ class PaintingController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Remove the specified resource from storage.
      *
      * @param $id
      * @return Response
      */
-    public function edit($id): Response
+    public function destroy($id): Response
     {
-        return Inertia::render('Paintings/edit', ['painting' => Painting::findOrFail($id)]);
-    }
+        PaintingService::deletePaintingService($id);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Painting $painting
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Painting $painting)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Painting $painting
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Painting $painting)
-    {
-        //
+        return self::returningToGallery();
     }
 }

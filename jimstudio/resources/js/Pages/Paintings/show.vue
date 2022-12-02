@@ -98,7 +98,7 @@
                         <img :src = "'/storage/' + url" :alt = "url">
                     </div>
                 </div>
-                <Link :href = "'/paintings/' + painting.id + '/edit' " class = "inline-block m-5">Edit</Link>
+                <button href = "#" type = "submit" class = "inline-block m-5">Delete</button>
                 <Link href = "/paintings/" class = "inline-block m-5">Gallery</Link>
                 <Link href = "/dashboard" class = "inline-block m-5">Dashboard</Link>
             </form>
@@ -148,7 +148,7 @@ export default {
         });
 
         function submit() {
-            Inertia.put(route('painting.delete', form.id));
+            Inertia.post(route('painting.delete', form.id));
             form.title = null;
             form.category = null;
             form.size = null;

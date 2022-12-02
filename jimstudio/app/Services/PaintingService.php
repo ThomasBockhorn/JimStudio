@@ -3,12 +3,18 @@
 namespace App\Services;
 
 use App\Models\Painting;
+use Illuminate\Support\Facades\Storage;
 
 class PaintingService
 {
+
+    /**
+     * @param $request
+     * @return void
+     */
     public static function createPaintingService($request): void
     {
-        $fileName = time().'.'.$request->image->extension();
+        $fileName = time() . '.' . $request->image->extension();
 
         $request->image->move(public_path('storage'), $fileName);
 
@@ -23,5 +29,23 @@ class PaintingService
             'category' => $request->category,
             'image' => $fileName
         ]);
+    }
+
+
+    /**
+     * @param $id
+     * @return void
+     */
+    public static function deletePaintingService($id): void
+    {
+
+        $painting = Painting::findOrFail($id);
+
+        if (Storage::exists('/public/' . $painting->image)) {
+            Storage::delete('/public/' . $painting->image);
+        }
+
+        $painting->delete();
+
     }
 }

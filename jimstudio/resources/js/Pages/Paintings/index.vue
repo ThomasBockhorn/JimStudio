@@ -21,7 +21,6 @@
                 </figure>
             </div>
         </div>
-
     </backend-layout>
 </template>
 

@@ -32,7 +32,7 @@ Route::get('/about', function() {
     return Inertia::render('About');
 });
 
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
 
@@ -42,7 +42,14 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', compact('paintings'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('paintings/availability', function () {
+    $paintings = Painting::all();
+    return Inertia::render('Paintings/Availability/availability', compact('paintings'));
+})->middleware('auth')->name('availability');
+
+Route::post('paintings/availability', [PaintingController::class, 'changeStatus'])->name('painting-availability');
+
 Route::resource('/paintings', PaintingController::class)
     ->middleware('auth')->except(['edit', 'update']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

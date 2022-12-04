@@ -38,7 +38,6 @@ class PaintingService
      */
     public static function deletePaintingService($id): void
     {
-
         $painting = Painting::findOrFail($id);
 
         if (Storage::exists('/public/' . $painting->image)) {
@@ -47,5 +46,14 @@ class PaintingService
 
         $painting->delete();
 
+    }
+
+    public static function changeAvailability($id, $response): void
+    {
+        $painting = Painting::findOrFail($id);
+
+        $painting->status = $response;
+
+        $painting->save();
     }
 }

@@ -46,10 +46,28 @@ class PaintingController extends Controller
         return Inertia::render('Paintings/create');
     }
 
+
+    /**
+     * This method will update the availability or unavailability of a painting
+     *
+     * @param Request $request
+     *
+     * @return void
+     */
+    public function changeStatus(Request $request): void
+    {
+        $painting = Painting::findOrFail($request->id);
+
+        $painting->status = $request->status;
+
+        $painting->save();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
+     *
      * @return Response
      */
     public function store(Request $request): Response
@@ -70,6 +88,7 @@ class PaintingController extends Controller
         return Inertia::render('Paintings/show', ['painting' => Painting::findOrFail($id)]);
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -82,4 +101,6 @@ class PaintingController extends Controller
 
         return self::returningToGallery();
     }
+
+
 }

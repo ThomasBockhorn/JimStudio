@@ -50,7 +50,6 @@ export default {
     props: ['paintings'],
     methods: {
         updateStatus(id, status) {
-            console.log(status);
             Inertia.post(route('painting-availability'), {id, status});
         }
     }

@@ -4,6 +4,7 @@
         <div class = "flex justify-center">
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
                 <figure v-for="painting in paintings" :key="painting.id">
+                    <div v-if = "painting.status === 'unavailable'" class = "sold_out">Sold</div>
                     <img
                         :src = "'storage/' + painting.image"
                         :alt = "painting.title">
@@ -25,11 +26,31 @@
 <script>
 import mainLayout from "../Layouts/MainLayout.vue";
 
-export default{
-    components:{
+export default {
+    components: {
         "main-layout": mainLayout
     },
     props: ['paintings']
 }
 </script>
-<style scoped></style>
+<style scoped>
+.sold_out {
+    color: #fff;
+    display: block;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .06em;
+    background-color: #A00;
+    padding: 0.5em 5em 0.4em 5em;
+    text-shadow: 0 0 0.75em #444;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    font: bold 16px/1.2em Arial, Sans-Serif;
+    -webkit-text-shadow: 0 0 0.75em #444;
+    -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(-45deg) scale(0.75, 1);
+    z-index: 10;
+}
+
+
+</style>

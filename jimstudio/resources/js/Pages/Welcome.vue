@@ -34,6 +34,8 @@ export default {
 }
 </script>
 <style scoped>
+
+/*add a sold badge to images if the status is unavailable*/
 .sold_out {
     color: #fff;
     display: block;
@@ -50,6 +52,15 @@ export default {
     -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
     -webkit-transform: rotate(-45deg) scale(0.75, 1);
     z-index: 10;
+}
+
+/*Increase image size when selected*/
+img {
+    transition: transform 0.25s ease;
+}
+
+img:hover {
+    transform: scale(1.5);
 }
 
 

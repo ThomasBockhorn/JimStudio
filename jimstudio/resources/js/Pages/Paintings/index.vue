@@ -5,6 +5,7 @@
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
                 <figure v-for="painting in paintings" :key="painting.id">
                     <img
+                        class = "cursor-pointer"
                         :src = "'/storage/' + painting.image"
                         :alt = "painting.title"
                         @click = "showIndividualProfile(painting.id)">

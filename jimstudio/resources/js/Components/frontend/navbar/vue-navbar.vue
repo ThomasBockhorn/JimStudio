@@ -16,7 +16,8 @@
         <div class="flex justify-center mt-2">
             <ul v-if="active" @mouseleave="active = false" class="block flex flex-col text-center w-60 bg-gray-100 z-50 absolute">
                 <Link v-for = "painting in categoryMenu" :key = "painting.id"
-                      class = "hover:bg-gray-700 hover:text-white p-2" @click = "categoryPick">{{ painting }}
+                      class = "hover:bg-gray-700 hover:text-white p-2 first-letter:uppercase" @click = "categoryPick">
+                    {{ painting }}
                 </Link>
             </ul>
         </div>

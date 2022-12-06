@@ -1,5 +1,5 @@
 <template>
-    <vue-navbar></vue-navbar>
+    <vue-navbar :paintings = "paintings"></vue-navbar>
     <slot/>
 </template>
 
@@ -7,13 +7,10 @@
 import navbar from "../Components/frontend/navbar/vue-navbar.vue";
 
 export default {
-	name: "MainLayout",
-    components:{
+    name: "MainLayout",
+    components: {
         "vue-navbar": navbar
-    }
+    },
+    props: ['paintings']
 }
 </script>
-
-<style scoped>
-
-</style>

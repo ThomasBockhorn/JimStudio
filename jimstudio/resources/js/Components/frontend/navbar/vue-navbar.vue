@@ -13,43 +13,50 @@
                 <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/dashboard" as="button">Dashboard</Link>
             </nav>
         </div>
-
         <div class="flex justify-center mt-2">
             <ul v-if="active" @mouseleave="active = false" class="block flex flex-col text-center w-60 bg-gray-100 z-50 absolute">
-                <Link class="hover:bg-gray-700 hover:text-white p-2" @click="categoryPick">test 1</Link>
-                <li class="hover:bg-gray-700 hover:text-white p-2" @click="categoryPick">test 2</li>
+                <Link v-for = "painting in categoryMenu" :key = "painting.id"
+                      class = "hover:bg-gray-700 hover:text-white p-2" @click = "categoryPick">{{ painting }}
+                </Link>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/inertia-vue3';
 
 export default {
-	name: "vue-navbar",
-    data(){
-      return{
-          active: false,
-
-      }
+    name: "vue-navbar",
+    data() {
+        return {
+            active: false,
+            menuArray: []
+        }
     },
-    components:{
+    components: {
         Link,
     },
-    computed:{
-      currentURL(){
-         return window.location.pathname === '/';
-      }
+    props: ['paintings'],
+    computed: {
+        //If the current window is not the main window, the category button disappears
+        currentURL() {
+            return window.location.pathname === '/';
+        },
+        categoryMenu() {
+            //This creates a unique category Menu array
+            return this.menuArray = [...new Set(this.paintings.map(item => item.category))];
+        }
+
     },
-    methods:{
-        dropDown(){
+    methods: {
+        dropDown() {
             this.active = !this.active;
         },
-        categoryPick(){
-           this.active = !this.active;
+        categoryPick() {
+            this.active = !this.active;
         }
-    }
+    },
 }
 </script>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategorySearchController;
 use App\Http\Controllers\PaintingController;
 use App\Models\Painting;
 use Illuminate\Support\Facades\Route;
@@ -28,13 +29,15 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function() {
+Route::get('/about', function () {
     return Inertia::render('About');
 });
 
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
+
+Route::get('/paintings/category', [CategorySearchController::class, 'index'])->name('category');
 
 /*-------------------------------------Backend pages----------------------------------*/
 Route::get('/dashboard', function () {

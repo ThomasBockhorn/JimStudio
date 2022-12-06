@@ -15,9 +15,10 @@
         </div>
         <div class="flex justify-center mt-2">
             <ul v-if="active" @mouseleave="active = false" class="block flex flex-col text-center w-60 bg-gray-100 z-50 absolute">
-                <Link v-for = "painting in categoryMenu" :key = "painting.id"
+                <Link v-for = "category in categoryMenu" :key = "category" :data = "{ category: category}"
+                      href = "/paintings/category"
                       class = "hover:bg-gray-700 hover:text-white p-2 first-letter:uppercase" @click = "categoryPick">
-                    {{ painting }}
+                    {{ category }}
                 </Link>
             </ul>
         </div>
@@ -40,9 +41,9 @@ export default {
     },
     props: ['paintings'],
     computed: {
-        //If the current window is not the main window, the category button disappears
+        //If the current window is not the main window or the category search page, the category button disappears
         currentURL() {
-            return window.location.pathname === '/';
+            return window.location.pathname === '/' || window.location.pathname.startsWith('/paintings/category');
         },
         categoryMenu() {
             //This creates a unique category Menu array

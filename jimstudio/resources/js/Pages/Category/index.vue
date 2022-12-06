@@ -1,14 +1,14 @@
 <template>
-    <main-layout :paintings = "paintings">
+    <main-layout>
         <h2 class = "text-center text-4xl mb-10 tracking-wider">Gallery</h2>
         <div class = "flex justify-center">
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
                 <figure v-for = "painting in paintings" :key = "painting.id">
                     <div v-if = "painting.status === 'unavailable'" class = "sold_out">Sold</div>
                     <img
-                        class = "cursor-pointer"
-                        :src = "'storage/' + painting.image"
-                        :alt = "painting.title">
+                        :alt = "painting.title"
+                        :src = "'/storage/' + painting.image"
+                        class = "cursor-pointer">
                     <figcaption class = "cursor-default">
                         <p>Title: <em>{{ painting.title }}</em></p>
                         <p>Size: {{ painting.size }}</p>
@@ -24,16 +24,19 @@
         </div>
     </main-layout>
 </template>
+
 <script>
-import mainLayout from "../Layouts/MainLayout.vue";
+import mainLayout from "@/Layouts/MainLayout.vue";
 
 export default {
+    name: "index",
     components: {
         "main-layout": mainLayout
     },
     props: ['paintings']
 }
 </script>
+
 <style scoped>
 
 /*add a sold badge to images if the status is unavailable*/
@@ -54,15 +57,4 @@ export default {
     -webkit-transform: rotate(-45deg) scale(0.75, 1);
     z-index: 10;
 }
-
-/*Increase image size when selected*/
-/*img {
-    transition: transform 0.25s ease;
-}
-
-img:hover {
-    transform: scale(1.5);
-}*/
-
-
 </style>

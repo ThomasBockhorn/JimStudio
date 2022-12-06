@@ -24,9 +24,11 @@
                     </div>
                     <div class="p-3">
                         <table class="table-auto w-full text-left">
-                            <tbody class="text-gray-600">
-                            <tr v-for="painting in paintings" :key="painting.id">
-                                <td colspan="6" class="border border-l-0 border-r-0 px-4 py-2 text-2xl hover:bg-teal-300">{{ painting.category}}</td>
+                            <tbody class = "text-gray-600">
+                            <tr v-for = "category in categoryList" :key = "category">
+                                <td class = "border border-l-0 border-r-0 px-4 py-2 text-2xl hover:bg-teal-300 first-letter:uppercase"
+                                    colspan = "6">{{ category }}
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -38,14 +40,25 @@
 </template>
 <script>
 import backendLayout from "../Layouts/AuthenticatedLayout.vue";
-import { Link } from "@inertiajs/inertia-vue3";
+import {Link} from "@inertiajs/inertia-vue3";
 
-export default{
-    components:{
+export default {
+    components: {
         "backend-layout": backendLayout,
         Link
     },
-    props:['paintings']
+    props: ['paintings'],
+    data() {
+        return {
+            categoryLists: []
+        }
+    },
+    computed: {
+        categoryList() {
+            //This creates a unique category Menu array
+            return this.categoryLists = [...new Set(this.paintings.map(item => item.category))];
+        }
+    }
 }
 </script>
 

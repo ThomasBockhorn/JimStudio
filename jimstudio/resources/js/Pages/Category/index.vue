@@ -1,9 +1,9 @@
 <template>
-    <main-layout>
+    <main-layout :paintings = "paintings">
         <h2 class = "text-center text-4xl mb-10 tracking-wider">Gallery</h2>
         <div class = "flex justify-center">
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
-                <figure v-for = "painting in paintings" :key = "painting.id">
+                <figure v-for = "painting in selectedPaintings" :key = "painting.id">
                     <div v-if = "painting.status === 'unavailable'" class = "sold_out">Sold</div>
                     <img
                         :alt = "painting.title"
@@ -33,7 +33,7 @@ export default {
     components: {
         "main-layout": mainLayout
     },
-    props: ['paintings']
+    props: ['selectedPaintings', 'paintings']
 }
 </script>
 

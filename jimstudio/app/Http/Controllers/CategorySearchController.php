@@ -20,6 +20,7 @@ class CategorySearchController extends Controller
      */
     public function index(Request $request): Response
     {
+        //This will search for a particular category
         return Inertia::render('Category/index', ['selectedPaintings' => DB::table('paintings')
             ->where('category', 'LIKE', '%' . $request->category . '%')
             ->get(),

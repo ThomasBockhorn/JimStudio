@@ -8,7 +8,8 @@
                     <img
                         class = "cursor-pointer"
                         :src = "'storage/' + painting.image"
-                        :alt = "painting.title">
+                        :alt = "painting.title"
+                        @click = "showIndividualProfile(painting.image)">
                     <figcaption class = "cursor-default">
                         <p>Title: <em>{{ painting.title }}</em></p>
                         <p>Size: {{ painting.size }}</p>
@@ -22,16 +23,37 @@
                 </figure>
             </div>
         </div>
+        <div v-if = "showDetail">
+            <painting-detail :painting = "selectedPainting" @close = "closeImage"></painting-detail>
+        </div>
     </main-layout>
 </template>
 <script>
 import mainLayout from "../Layouts/MainLayout.vue";
+import paintingDetail from '../Components/frontend/painting/PaintingDetail.vue';
 
 export default {
     components: {
-        "main-layout": mainLayout
+        "main-layout": mainLayout,
+        "painting-detail": paintingDetail,
     },
-    props: ['paintings']
+    props: ['paintings'],
+    data() {
+        return {
+            selectedPainting: null,
+            showDetail: false,
+        }
+    },
+    methods: {
+        showIndividualProfile(image) {
+            this.selectedPainting = image;
+            this.showDetail = true;
+        },
+        closeImage(event) {
+            console.log(event);
+            this.showDetail = event;
+        }
+    }
 }
 </script>
 <style scoped>
@@ -49,9 +71,8 @@ export default {
     text-shadow: 0 0 0.75em #444;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
     font: bold 16px/1.2em Arial, Sans-Serif;
-    -webkit-text-shadow: 0 0 0.75em #444;
     -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
-    -webkit-transform: rotate(-45deg) scale(0.75, 1);
+    transform: rotate(-45deg) scale(0.75, 1);
     z-index: 10;
 }
 

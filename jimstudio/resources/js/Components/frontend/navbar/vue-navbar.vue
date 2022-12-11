@@ -1,16 +1,28 @@
 <template>
     <div class="w-full">
-        <div class="bg-gray-100 w-full">
-            <div class="flex justify-center z-10">
-                <img src="/images/FelderStudioLogo.png" alt="Jim Logo">
+        <div class = "bg-gray-100 w-full">
+            <div class = "flex justify-center z-10">
+                <img alt = "Jim Logo" src = "/images/FelderStudioLogo.png">
+                <button class = "text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none md:hidden"
+                        type = "button"
+                        @click = "isOpen = !isOpen">
+                    <svg class = "h-6 w-6 fill-current ml-10" viewBox = "0 0 24 24">
+                        <path
+                            d = "M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                    </svg>
+                </button>
             </div>
-            <nav class="flex justify-center ml-6 mr-6">
-                <a class="p-3 hover:bg-gray-700 hover:text-white" href = "/welcome">Home</a>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/" as="button">Gallery</Link>
-                <button v-if="currentURL" class="p-3 hover:bg-gray-700 hover:text-white" @click="dropDown">Category</button>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/about" as="button">About</Link>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/contact">Contact</Link>
-                <Link class="p-3 hover:bg-gray-700 hover:text-white" href="/dashboard" as="button">Dashboard</Link>
+            <nav :class = "isOpen? '!flex' : '!hidden'"
+                 class = "flex-col md:flex-row ml-6 mr-6 justify-center hidden md:!flex">
+                <a class = "p-3 hover:bg-gray-700 hover:text-white block" href = "/welcome">Home</a>
+                <Link class = "p-3 hover:bg-gray-700 hover:text-white block" href = "/">Gallery</Link>
+                <button v-if = "currentURL" id = "category"
+                        class = "p-3 hover:bg-gray-700 hover:text-white w-full block md:w-auto text-start"
+                        @click = "dropDown">Category
+                </button>
+                <Link class = "p-3 hover:bg-gray-700 hover:text-white block" href = "/about">About</Link>
+                <Link class = "p-3 hover:bg-gray-700 hover:text-white block" href = "/contact">Contact</Link>
+                <Link class = "p-3 hover:bg-gray-700 hover:text-white block" href = "/dashboard">Dashboard</Link>
             </nav>
         </div>
         <div class="flex justify-center mt-2">
@@ -33,7 +45,8 @@ export default {
     data() {
         return {
             active: false,
-            menuArray: []
+            menuArray: [],
+            isOpen: true
         }
     },
     components: {
@@ -69,4 +82,5 @@ export default {
     li{
         font-family: 'Montserrat', sans-serif
     }
+
 </style>

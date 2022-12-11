@@ -4,63 +4,91 @@
         <div class = "flex justify-center m-8">
             <form @submit.prevent="submit">
                 <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="project-title">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "project-title">
                             Painting Title
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="project-title" type="text" placeholder="Project Title" v-model="form.title">
+                        <input
+                            id = "project-title"
+                            v-model = "form.title"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Project Title" required
+                            type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="project-category">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "project-category">
                             Painting Category
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="project-category" type="text" placeholder="Category" v-model="form.category">
+                        <input
+                            id = "project-category"
+                            v-model = "form.category"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Category" required
+                            type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-size">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-size">
                             Painting Size
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="painting-size" type="text" placeholder="Painting Size" v-model="form.size">
+                        <input
+                            id = "painting-size"
+                            v-model = "form.size"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Painting Size" required
+                            type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-medium">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-medium">
                             Painting Medium
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="painting-medium" type="text" placeholder="Painting Medium" v-model="form.medium">
+                        <input
+                            id = "painting-medium"
+                            v-model = "form.medium"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Painting Medium" required
+                            type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-location">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-location">
                             Painting Location
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="painting-location" type="text" placeholder="Painting Location" v-model="form.location">
+                        <input
+                            id = "painting-location"
+                            v-model = "form.location"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Painting Location"
+                            required type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-frame">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-frame">
                             Painting Frame
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="painting-frame" type="text" placeholder="Painting Frame" v-model="form.frame_status">
+                        <input
+                            id = "painting-frame"
+                            v-model = "form.frame_status"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Painting Frame"
+                            required type = "text">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-status">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-status">
                             Painting Status
                         </label>
-                        <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                                id="skill-percentage" name="skill_percentage" v-model="form.status">
-                            <option value="available">Available</option>
-                            <option value="unavailable">Not Available</option>>
+                        <select
+                            id = "skill-percentage"
+                            v-model = "form.status"
+                            class = "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            name = "skill_percentage" required>
+                            <option value = "available">Available</option>
+                            <option value = "unavailable">Not Available</option>
+                            >
                         </select>
                     </div>
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -70,23 +98,30 @@
                         </label>
                         <input
                             id = "painting-image"
-                            accept = ".jpg, .jpeg, .png" class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500" placeholder = "Painting Image"
+                            accept = ".jpg, .jpeg, .png"
+                            class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            placeholder = "Painting Image"
                             type = "file" @change = "previewImage"
+                            required
                             @input = "form.image = $event.target.files[0]">
                     </div>
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                               for="painting-notes">
+                    <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                               for = "painting-notes">
                             Notes
                         </label>
-                        <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                                  name = "notes" id = "painting-notes" cols = "30" rows = "10" placeholder="Painting Notes" v-model="form.notes"></textarea>
+                        <textarea
+                            id = "painting-notes"
+                            v-model = "form.notes"
+                            class = "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
+                            cols = "30" name = "notes" placeholder = "Painting Notes"
+                            required rows = "10"></textarea>
                     </div>
                     <div class="w-full md:w-1/2 px-3 mt-5">
                         <img :src = "url" :alt = "url">
                     </div>
                 </div>
-                <button href="#" type="submit" class="inline-block m-5">Submit</button>
+                <button class = "inline-block m-5" type = "submit">Submit</button>
                 <Link href="/paintings/" class="inline-block m-5">Back</Link>
             </form>
         </div>

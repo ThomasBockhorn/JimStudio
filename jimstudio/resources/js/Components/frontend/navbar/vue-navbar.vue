@@ -46,7 +46,7 @@ export default {
         return {
             active: false,
             menuArray: [],
-            isOpen: true
+            isOpen: false
         }
     },
     components: {

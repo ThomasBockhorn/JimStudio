@@ -6,7 +6,7 @@
 
 <script>
 import navbar from "../Components/frontend/navbar/vue-navbar.vue";
-import footer from "../Components/frontend/footer/footer.vue";
+import footer from "../Components/frontend/footer/vue-footer.vue";
 
 export default {
     name: "MainLayout",

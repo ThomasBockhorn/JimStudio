@@ -68,8 +68,11 @@
                                for="painting-image">
                             Painting Image
                         </label>
-                        <input class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
-                               id="painting-image" type="file" placeholder="Painting Image" @input="form.image = $event.target.files[0]" @change="previewImage">
+                        <input
+                            id = "painting-image"
+                            accept = ".jpg, .jpeg, .png" class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500" placeholder = "Painting Image"
+                            type = "file" @change = "previewImage"
+                            @input = "form.image = $event.target.files[0]">
                     </div>
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"

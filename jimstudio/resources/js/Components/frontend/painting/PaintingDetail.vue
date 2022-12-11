@@ -3,7 +3,7 @@
         <div class = "flex justify-end bg-gray-200">
             <button class = "p-3 hover:bg-gray-700 hover:text-white" @click = "closeDetail">Close</button>
         </div>
-        <div class = "pl-5 pr-5 bg-gray-100">
+        <div class = "pl-5 pr-5 bg-gray-100 h-full">
             <img :alt = "painting.image" :src = "'storage/' + painting">
         </div>
     </div>

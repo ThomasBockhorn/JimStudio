@@ -14,6 +14,8 @@ class PaintingService
      */
     public static function createPaintingService($request): void
     {
+        dd($request->image);
+
         $fileName = time() . '.' . $request->image->extension();
 
         $request->image->move(public_path('storage'), $fileName);

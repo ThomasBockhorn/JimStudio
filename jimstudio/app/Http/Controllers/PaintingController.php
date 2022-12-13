@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
+/**
+ * Class PaintingController
+ * @package App\Http\Controllers
+ */
 class PaintingController extends Controller
 {
-
 
     /**
      * Return to the main gallery.
@@ -74,6 +77,7 @@ class PaintingController extends Controller
     {
         PaintingService::createPaintingService($request);
 
+        //This will return to the main gallery
         return self::returningToGallery();
     }
 
@@ -99,6 +103,7 @@ class PaintingController extends Controller
     {
         PaintingService::deletePaintingService($id);
 
+        //This will return to the main gallery
         return self::returningToGallery();
     }
 

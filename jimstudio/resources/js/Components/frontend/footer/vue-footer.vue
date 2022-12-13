@@ -19,7 +19,3 @@ export default {
     name: "vue-footer"
 }
 </script>
-
-<style scoped>
-
-</style>

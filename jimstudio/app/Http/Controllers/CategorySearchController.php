@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
 
+/**
+ * Class PaintingController
+ * @package App\Http\Controllers
+ */
 class CategorySearchController extends Controller
 {
 

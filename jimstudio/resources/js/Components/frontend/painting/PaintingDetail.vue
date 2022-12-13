@@ -1,4 +1,5 @@
 <template>
+    <!--This will show the user the current painting in a large format-->
     <div class = "top-0 left-0 z-50 fixed overflow-auto w-full h-screen bg-gray-100">
         <div class = "flex justify-end bg-gray-200">
             <button class = "p-3 hover:bg-gray-700 hover:text-white" @click = "closeDetail">Close</button>

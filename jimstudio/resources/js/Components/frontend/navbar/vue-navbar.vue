@@ -27,6 +27,7 @@
         </div>
         <div class="flex justify-center mt-2">
             <ul v-if="active" @mouseleave="active = false" class="block flex flex-col text-center w-60 bg-gray-100 z-50 absolute">
+                <!-- This retrieves the category names from the database and displays them as a dropdown menu -->
                 <Link v-for = "category in categoryMenu" :key = "category" :data = "{ category: category}"
                       href = "/paintings/category"
                       class = "hover:bg-gray-700 hover:text-white p-2 first-letter:uppercase" @click = "categoryPick">
@@ -58,16 +59,17 @@ export default {
         currentURL() {
             return window.location.pathname === '/' || window.location.pathname.startsWith('/paintings/category');
         },
+        //This creates a unique category Menu array
         categoryMenu() {
-            //This creates a unique category Menu array
             return this.menuArray = [...new Set(this.paintings.map(item => item.category))];
         }
-
     },
     methods: {
+        //This will make the dropdown disappear when the user clicks on a menu heading
         dropDown() {
             this.active = !this.active;
         },
+        //This will make the category menu disappear when the user clicks on a category
         categoryPick() {
             this.active = !this.active;
         }
@@ -82,5 +84,4 @@ export default {
     li{
         font-family: 'Montserrat', sans-serif
     }
-
 </style>

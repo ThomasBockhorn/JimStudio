@@ -1,9 +1,9 @@
 <template>
-    <div class = "top-0 left-0 z-50 absolute fixed w-full h-full">
+    <div class = "top-0 left-0 z-50 fixed overflow-auto w-full h-screen bg-gray-100">
         <div class = "flex justify-end bg-gray-200">
             <button class = "p-3 hover:bg-gray-700 hover:text-white" @click = "closeDetail">Close</button>
         </div>
-        <div class = "pl-5 pr-5 bg-gray-100 h-full">
+        <div class = "pl-5 pr-5 pt-5 flex justify-center ">
             <img :alt = "painting.image" :src = "'storage/' + painting">
         </div>
     </div>
@@ -23,6 +23,8 @@ export default {
 
 <style scoped>
 img {
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
+
 }
 </style>

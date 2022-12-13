@@ -55,6 +55,13 @@ class PaintingService
 
     }
 
+
+    /**
+     * @param $id
+     * @param $response
+     *
+     * @return void
+     */
     public static function changeAvailability($id, $response): void
     {
         $painting = Painting::findOrFail($id);

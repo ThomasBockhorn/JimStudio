@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Painting Model
- *
- * @method static findOrFail($id)
  */
 class Painting extends Model
 {

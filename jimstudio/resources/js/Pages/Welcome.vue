@@ -1,5 +1,5 @@
 <template>
-    <main-layout :paintings = "paintings">
+    <main-layout :paintings = "paintings" class = "m-0">
         <h2 class = "text-center text-4xl mb-10 tracking-wider">Gallery</h2>
         <div class = "flex justify-center">
             <div class = "grid md:grid-cols-3 sm:grid-cols-1 gap-10 ml-16 mr-16">
@@ -46,6 +46,7 @@ export default {
     },
     methods: {
         showIndividualProfile(image) {
+            window.scrollTo(0, 0);
             this.selectedPainting = image;
             this.showDetail = true;
         },
@@ -75,15 +76,4 @@ export default {
     transform: rotate(-45deg) scale(0.75, 1);
     z-index: 10;
 }
-
-/*Increase image size when selected*/
-/*img {
-    transition: transform 0.25s ease;
-}
-
-img:hover {
-    transform: scale(1.5);
-}*/
-
-
 </style>

@@ -2,8 +2,8 @@
     <backend-layout>
         <h2 class = "text-center text-4xl mb-10 tracking-wider">Create a New Painting</h2>
         <div class = "flex justify-center m-8">
-            <form @submit.prevent="submit">
-                <div class="flex flex-wrap -mx-3 mb-6">
+            <form @submit.prevent = "submit" enctype = "multipart/form-data" method = "post">
+                <div class = "flex flex-wrap -mx-3 mb-6">
                     <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
                                for = "project-title">
@@ -98,12 +98,12 @@
                         </label>
                         <input
                             id = "painting-image"
-                            accept = ".jpg, .jpeg, .png"
+                            name = "image"
                             class = " appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"
                             placeholder = "Painting Image"
                             type = "file" @change = "previewImage"
                             required
-                            @input = "form.image = $event.target.files[0]">
+                            @input = "form.image = $event.target.files[0] || $event.dataTransfer.files">
                     </div>
                     <div class = "w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class = "block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
@@ -130,9 +130,8 @@
 
 <script>
 import backendLayout from "@/Layouts/AuthenticatedLayout.vue";
-import {reactive} from "vue";
-import {Inertia} from "@inertiajs/inertia";
 import {Link} from '@inertiajs/inertia-vue3';
+import {useForm} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "create",
@@ -141,7 +140,7 @@ export default {
         Link
     },
     setup() {
-        const form = reactive({
+        const form = useForm({
             title: null,
             size: null,
             medium: null,
@@ -150,11 +149,14 @@ export default {
             status: null,
             notes: null,
             category: null,
-            image: null
+            image: null,
         });
 
-        function submit(){
-            Inertia.post(route('paintings.store'), form);
+        function submit() {
+            form.post(route('paintings.store'), {
+                forceFormData: true,
+            });
+            // Inertia.post(route('paintings.store'), form);
         }
 
         return { form, submit }
@@ -170,10 +172,5 @@ export default {
             this.url = URL.createObjectURL(imageURL);
         }
     },
-
 }
 </script>
-
-<style scoped>
-
-</style>

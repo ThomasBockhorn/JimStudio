@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PaintingRequest;
 use App\Models\Painting;
 use App\Services\PaintingService;
 use Illuminate\Http\Request;
@@ -57,7 +58,7 @@ class PaintingController extends Controller
      *
      * @return void
      */
-    public function changeStatus(Request $request): void
+    public function changeStatus(PaintingRequest $request): void
     {
         $painting = Painting::findOrFail($request->id);
 
@@ -73,7 +74,7 @@ class PaintingController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request): Response
+    public function store(PaintingRequest $request): Response
     {
         PaintingService::createPaintingService($request);
 

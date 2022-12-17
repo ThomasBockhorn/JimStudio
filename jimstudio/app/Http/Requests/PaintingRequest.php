@@ -24,15 +24,15 @@ class PaintingRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'size' => ' required',
-            'medium' => ' required',
-            'location' => ' required',
-            'frame_status' => ' required',
-            'status' => ' required',
+            'title' => 'required|string|max:255',
+            'size' => ' required|string|max:255',
+            'medium' => ' required|string|max:255',
+            'location' => ' required|string|max:255',
+            'frame_status' => ' required|string|max:255',
+            'status' => ' required|string|max:255',
             'notes' => 'required',
-            'category' => ' required',
-            'image' => ' required'
+            'category' => ' required|string|max:255',
+            'image' => ' required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

@@ -58,7 +58,7 @@ class PaintingController extends Controller
      *
      * @return void
      */
-    public function changeStatus(PaintingRequest $request): void
+    public function changeStatus(Request $request): void
     {
         $painting = Painting::findOrFail($request->id);
 

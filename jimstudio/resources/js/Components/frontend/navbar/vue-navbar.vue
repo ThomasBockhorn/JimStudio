@@ -3,10 +3,11 @@
         <div class = "bg-gray-100 w-full">
             <div class = "flex justify-center z-10">
                 <img alt = "Jim Logo" src = "/images/FelderStudioLogo.png">
-                <button class = "text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none md:hidden"
-                        type = "button"
-                        @click = "isOpen = !isOpen">
-                    <svg class = "h-6 w-6 fill-current ml-10" viewBox = "0 0 24 24">
+                <button
+                    class = " ml-5 text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none md:hidden"
+                    type = "button"
+                    @click = "isOpen = !isOpen">
+                    <svg class = "h-6 w-6 fill-current" viewBox = "0 0 24 24">
                         <path
                             d = "M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                     </svg>
@@ -78,10 +79,17 @@ export default {
 </script>
 
 <style scoped>
-    a,
-    button,
-    Link,
-    li{
-        font-family: 'Montserrat', sans-serif
+a,
+button,
+Link,
+li {
+    font-family: 'Montserrat', sans-serif
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 200px;
+        height: 50px;
     }
+}
 </style>
